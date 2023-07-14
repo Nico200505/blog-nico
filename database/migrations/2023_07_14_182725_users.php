@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Post extends Migration
+class Users extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,13 @@ class Post extends Migration
      */
     public function up()
     {
-        Schema::create('post',function(Blueprint $table){
-$table->id_post();
-$table->string('Titulo');
-$table->string('Cuerpo');
-$table->timestamps();
-
-        }  );
-    
-    
-  
+        Schema::create('users',function(Blueprint $table){
+            $table->id_autor();
+            $table->string('nombre_usuario');
+            $table->string('correo_electronico');
+            $table->timestamps();
+            
+                    }  );
     }
 
     /**
@@ -32,6 +29,6 @@ $table->timestamps();
      */
     public function down()
     {
-        Schema::dropIfExists('post');
+        Schema::dropIfExists('users');
     }
 }

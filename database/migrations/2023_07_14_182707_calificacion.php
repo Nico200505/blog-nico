@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Post extends Migration
+class Calificacion extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,12 @@ class Post extends Migration
      */
     public function up()
     {
-        Schema::create('post',function(Blueprint $table){
-$table->id_post();
-$table->string('Titulo');
-$table->string('Cuerpo');
-$table->timestamps();
-
-        }  );
-    
-    
-  
+        Schema::create('calificacion',function(Blueprint $table){
+            $table->id_calificacion();
+            $table->string('calificacion');
+            $table->timestamps();
+            
+                    }  );
     }
 
     /**
@@ -32,6 +28,6 @@ $table->timestamps();
      */
     public function down()
     {
-        Schema::dropIfExists('post');
+        Schema::dropIfExists('calificacion');
     }
 }
